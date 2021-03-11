@@ -75,9 +75,60 @@ h1 {
 
 .card__container {
   display: grid;
+  height: 100%;
 }
 
 header h1,
 header h2 {
   text-align: center;
+}
+
+p {
+  color: white;
+  text-shadow: 0px 0px 5px rgba(0,0,0, 0.5);
+}
+
+/* =============== PASSWORD TEXTAREA =================== */
+
+.grid__item2 {
+  display: flex;
+  justify-content: center;
+}
+
+/* =============== NUMBER OF CHARACTERS =================== */
+
+.grid__item3 {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* =============== INCLUDE UPPERCASE =================== */
+
+.grid__item4 {
+  display: flex;
+  justify-content: space-around;
+}
+/* =============== INCLUDE LOWERCASE =================== */
+
+.grid__item5 {
+  display: flex;
+  justify-content: space-around;
+}
+/* =============== INCLUDE SYMBOLS =================== */
+
+.grid__item6 {
+  display: flex;
+  justify-content: space-around;
+}
+/* =============== INCLUDE NUMBERS =================== */
+
+.grid__item7 {
+  display: flex;
+  justify-content: space-around;
+}
+/* =============== GENERATE BUTTON =================== */
+
+.grid__item8 {
+  display: flex;
+  justify-content: center;
 }
