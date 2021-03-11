@@ -2,34 +2,55 @@
 
 :root {
   /* ================ DEFAULT COLOURS ==================== */
-  --main-color: #445876;
-  --first-color: #2b2e36;
-  --second-color: #90c9cb;
-  --third-color: #31343d;
-  --forth-color: #91cccd;
-  --p-colour: #6e83a3;
+  --main-color: 
+  --first-color: 
+  --second-color: 
+  --third-color: 
+  --forth-color: 
+  --p-colour: 
 
   /* =============== DEFAULT FONT SIZE =================== */
-  --p--font: 0.5rem;
-  --one-font: 3rem;
-  --two-font: 2rem;
-  --three-font: 1.5rem;
-  --four-font: 1rem;
-  --five-font: 0.75rem;
+  --one-font: 1.5rem;
+  --two-font: 1rem;
+  --three-font: 0.75rem;
+  --four-font: 0.5rem;
+  --five-font: 0.3rem;
 }
 
 /* =============== UNIVERSAL STYLING =================== */
 
-* {
+*,
+::after,
+::before {
   box-sizing: border-box;
-  font-family: "Cormorant Unicase", serif;
+}
+
+html {
+  overflow-y: hidden;
 }
 
 body,
 html {
   margin: 0;
-  overflow-y: hidden;
-  height: auto;
+  padding: 0;
+  font-family: "Cormorant Unicase", serif;
+  font-size: var(--one-font);
+}
+
+.background {
+  background-image: url("../images/background.png");
+  height: 100vh;
+}
+
+h1,
+h2 {
+  margin: 0;
+  color: white;
+  text-shadow: 0px 0px 5px rgba(0,0,0, 0.5);
+}
+
+h1 {
+  margin-top: 5%;
 }
 
 /* =============== CONTAINER =================== */
@@ -39,8 +60,21 @@ html {
   justify-content: center;
   align-content: center;
   align-items: center;
-  height: 100%;
-  flex-direction: column;
+  height: 100vh;
+}
+
+/* =============== CARD =================== */
+.card {
+  width: 40%;
+  height: 70%;
+  border-radius: 1rem;
+  box-shadow: 20px 20px 50px rgba(0,0,0, 0.5);
+  background: rgba(110, 110, 110, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.card__container {
+  display: grid;
 }
 
 header h1,
