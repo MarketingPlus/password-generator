@@ -98,12 +98,17 @@ p {
 textarea {
   border-radius: 1rem;
   width: 80%;
+  color: white;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 20px 20px 50px rgba(0,0,0, 0.5);
 }
 
 textarea[placeholder] {
   text-align: center;
   margin: auto;
   align-content: center;
+  color: white;
 }
 /* =============== INPUT GRID =================== */
 
@@ -118,6 +123,38 @@ textarea[placeholder] {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.slider {
+  width: 50%;
+  opacity: 1;
+  background-color: rgb(0, 132, 255);
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+.slider:hover {
+  cursor: grab;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: rgb(0, 132, 255);
+}
+
+.slider::-moz-range-thumb {
+  background-color:rgb(0, 132, 255);
+}
+
+.number__box {
+  text-align: center;
+  border-radius: 15px;
+  color: white;
+  background-color: rgb(0, 132, 255);
+  padding: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 20px 20px 50px rgba(0,0,0, 0.5);
+  font-family: "Cormorant Unicase", serif;
 }
 
 /* =============== INCLUDE UPPERCASE =================== */
@@ -162,4 +199,20 @@ textarea[placeholder] {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+button { 
+  border-radius: 15px;
+  color: white;
+  background-color: rgb(0, 132, 255);
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 20px 20px 50px rgba(0,0,0, 0.5);
+  font-family: "Cormorant Unicase", serif;
+  transition: 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: rgb(115, 180, 241);
+  cursor: pointer;
 }
