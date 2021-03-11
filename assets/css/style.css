@@ -95,40 +95,71 @@ p {
   justify-content: center;
 }
 
-/* =============== NUMBER OF CHARACTERS =================== */
+textarea {
+  border-radius: 1rem;
+  width: 80%;
+}
+
+textarea[placeholder] {
+  text-align: center;
+  margin: auto;
+  align-content: center;
+}
+/* =============== INPUT GRID =================== */
 
 .grid__item3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* =============== NUMBER OF CHARACTERS =================== */
+
+.grid__sub1, .grid__sub2 {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
 }
 
 /* =============== INCLUDE UPPERCASE =================== */
 
-.grid__item4 {
+.grid__sub3, .grid__sub4 {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
 }
+
+
 /* =============== INCLUDE LOWERCASE =================== */
 
-.grid__item5 {
+.grid__sub5, .grid__sub6 {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
 }
+
+
 /* =============== INCLUDE SYMBOLS =================== */
 
-.grid__item6 {
+.grid__sub7, .grid__sub8 {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
 }
+
+
 /* =============== INCLUDE NUMBERS =================== */
 
-.grid__item7 {
+.grid__sub9, .grid__sub10 {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
 }
+
+
 /* =============== GENERATE BUTTON =================== */
 
-.grid__item8 {
+.grid__item4 {
   display: flex;
+  align-items: center;
   justify-content: center;
 }
