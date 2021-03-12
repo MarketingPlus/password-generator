@@ -99,18 +99,15 @@ p {
 textarea {
   border-radius: 1rem;
   width: 80%;
-  color: white;
+  color: black;
   padding: 1rem;
   border: 1px solid rgba(0, 0, 0, 0.5);
   box-shadow: 20px 20px 50px rgba(0,0,0, 0.5);
   resize: none;
-}
-
-textarea[placeholder] {
   text-align: center;
   margin: auto;
   align-content: center;
-  color: white;
+  color: black;
   font-family: "Cormorant Unicase", serif;
   font-size: 1.5rem;
 }
@@ -122,10 +119,6 @@ textarea[placeholder] {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
-
-/* =============== CHECKBOX STYLING =================== */
-
-
 
 /* =============== NUMBER OF CHARACTERS =================== */
 

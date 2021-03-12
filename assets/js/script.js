@@ -12,15 +12,18 @@ const numbersElement = document.getElementById('numbers')
 const button = document.getElementById('generate')
 
 // getting the input area and linking it to js
-const passwordShow = document.getElementById('password')
+const passwordShow = document.getElementById('passwordShow')
 
 // creating arrays for the special characters so i dont have to manually type each code i can justr convert the code number to character 
-const UPPERCASE_CHAR = arrayLoop(65, 90)
-const LOWERCASE_CHAR = arrayLoop(97, 122)
-const SYMBOL_CHAR = arrayLoop(33, 46)
-const NUMBER_CHAR = arrayLoop(48, 57).concat(arrayLoop(58, 64)
-).concat(arrayLoop(91, 96)
-).concat(arrayLoop(123, 126)
+const UPPERCASE_CHAR = arrayFromLowToHigh(65, 90)
+const LOWERCASE_CHAR = arrayFromLowToHigh(97, 122)
+const NUMBERS_CHAR = arrayFromLowToHigh(33, 46)
+const SYMBOLS_CHAR = arrayFromLowToHigh(48, 57).concat(
+  arrayFromLowToHigh(58, 64)
+).concat(
+  arrayFromLowToHigh(91, 96)
+).concat(
+  arrayFromLowToHigh(123, 126)
 )
 
 // linking my slider and number so they both have the same value
@@ -30,38 +33,35 @@ numberBoxNumber.addEventListener('input', linkCharacters)
 // checking for the users input values for the password length and a boolean if checkboxes have been checked
 button.addEventListener('click', e => {
   e.preventDefault()
-  const characterSlider = numberBoxNumber.value
+  const characterNumber = numberBoxNumber.value
   const uppercase = uppercaseElement.checked
   const lowercase = lowercaseElement.checked
   const symbols = symbolsElement.checked
   const numbers = numbersElement.checked
-  const password = generatePassword(characterSlider, uppercase, lowercase, symbols, numbers)
-  textarea
+  const password = generatePassword(characterNumber, uppercase, lowercase, symbols, numbers)
+  passwordShow.innerText = password
+  console.log(password)
 })
 
-
 // my function to generate the password which includes all my different variables 
-function generatePassword(characterSlider, uppercase, lowercase, symbols, numbers) {
-  let charPass = UPPERCASE_CHAR 
-  if (lowercase) charPass = charPass.concat
-  (LOWERCASE_CHAR)
-  if (symbols) charPass = charPass.concat
-  (SYMBOL_CHAR)
-  if (numbers) charPass = charPass.concat
-  (NUMBER_CHAR)
+function generatePassword(characterNumber, lowercase, symbols, numbers, uppercase) {
+  let charPass = ''
+  if (lowercase) charPass = charPass.concat(LOWERCASE_CHAR)
+  if (uppercase) charPass = charPass.concat(UPPERCASE_CHAR)
+  if (symbols) charPass = charPass.concat(SYMBOLS_CHAR)
+  if (numbers) charPass = charPass.concat(NUMBERS_CHAR)
 
 
-  const passwordChar = []
-  for(let i = 0; 0 < characterSlider, i++;) {
-    const characterCode = charPass[Math.floor(Math.random() * characterSlider)]
-    passwordChar.push(String.fromCharCode(characterCode))
+  const passwordCharacters = []
+  for (let i = 0; i < characterNumber; i++) {
+    const characterCode = charPass[Math.floor(Math.random() * charPass.length)]
+    passwordCharacters.push(String.fromCharCode(characterCode))
   }
-
-  return passwordChar.join('')
+  return passwordCharacters.join('')
 }
 
 // my array loop which counts from low number to high number (from a range) to gather the expected values for each character code set
-function arrayLoop(low, high) {
+function arrayFromLowToHigh(low, high) {
   const array = []
   for (let i = low; i <= high; i++) {
     array.push(i)
