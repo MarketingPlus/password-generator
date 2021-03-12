@@ -8,16 +8,17 @@ const lowercaseElement = document.getElementById('lowercaseVal')
 const symbolsElement = document.getElementById('symbolsVal')
 const numbersElement = document.getElementById('numbersVal')
 
+
 // linking my button so when i click it my function runs
 const button = document.getElementById('generate')
 
 // getting the input area and linking it to js
 const passwordShow = document.getElementById('passwordShow')
 
-// creating arrays for the special characters so i dont have to manually type each code i can justr convert the code number to character 
-const UPPERCASE_CHAR = arrayFromLowToHigh(65, 90)
-const LOWERCASE_CHAR = arrayFromLowToHigh(97, 122)
-const NUMBERS_CHAR = arrayFromLowToHigh(48, 57)
+// creating arrays for the special characters so i dont have to manually type each code i can justr convert the code number to character
+const NO_VALUE_CHECKED = "No Value Checked"
+const UPPERCASE_CHAR = arrayFromLowToHigh(65, 90);
+const LOWERCASE_CHAR = arrayFromLowToHigh(97, 122);
 const SYMBOLS_CHAR = arrayFromLowToHigh(33, 47).concat(
   arrayFromLowToHigh(58, 64)
 ).concat(
@@ -25,6 +26,7 @@ const SYMBOLS_CHAR = arrayFromLowToHigh(33, 47).concat(
 ).concat(
   arrayFromLowToHigh(123, 126)
 )
+const NUMBERS_CHAR = arrayFromLowToHigh(48, 57)
 
 // linking my slider and number so they both have the same value
 characterSliderRange.addEventListener('input', linkCharacters)
@@ -44,13 +46,12 @@ button.addEventListener('click', e => {
 })
 
 // my function to generate the password which includes all my different variables 
-function generatePassword(characterNumber, lowercaseVal, symbolsVal, numbersVal, uppercaseVal) {
-  let charPass = "Please Choose at least one value"
-  if (lowercaseVal) charPass = charPass.concat(LOWERCASE_CHAR)
+function generatePassword(characterNumber, lowercaseVal, symbolsVal, numbersVal, uppercaseVal, noValueChecked) {
+  let charPass = LOWERCASE_CHAR
   if (uppercaseVal) charPass = charPass.concat(UPPERCASE_CHAR)
+  if (lowercaseVal) charPass = charPass.concat(LOWERCASE_CHAR)
   if (symbolsVal) charPass = charPass.concat(SYMBOLS_CHAR)
   if (numbersVal) charPass = charPass.concat(NUMBERS_CHAR)
-
 
   const passwordCharacters = []
   for (let i = 0; i < characterNumber; i++) {
@@ -58,6 +59,8 @@ function generatePassword(characterNumber, lowercaseVal, symbolsVal, numbersVal,
     passwordCharacters.push(String.fromCharCode(characterCode))
   }
   return passwordCharacters.join('')
+
+  if 
 }
 
 // my array loop which counts from low number to high number (from a range) to gather the expected values for each character code set
@@ -76,5 +79,8 @@ function linkCharacters(e) {
   numberBoxNumber.value = value
 }
 
+function arrayNoValue() {
+
+}
 
 // var generateBtn = document.querySelector("#generate");function writePassword() {var password = generatePassword();var passwordText = document.querySelector("#password");passwordText.value = password;}generateBtn.addEventListener("click", writePassword);
