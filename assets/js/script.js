@@ -38,9 +38,15 @@ clipboard.addEventListener('click', () => {
 	document.execCommand('copy');
 	textarea.remove();
 	alert('Password copied to clipboard');
-}
+});
 
-
+generate.addEventListener('click', () => {
+  const length = +numberBoxNumber.value
+  const lowercaseChecked = lowercaseVal.checked;
+  const uppercaseChecked = uppercaseVal.checked;
+  const numbersChecked = numbersVal.checked;
+  const symbolsChecked = symbolsVal.checked;
+});
 
 
 
