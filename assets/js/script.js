@@ -10,6 +10,10 @@ const numbersElement = document.getElementById('numbers')
 
 const button = document.getElementById('generate')
 
+const uppercaseCharCode = arrayLoop(65, 90)
+const lowercaseCharCode = arrayLoop(97, 122)
+const symbolsCharCode = arrayLoop(33, 46)
+const uppercaseCharCode = arrayLoop(48, 57)
 
 characterSliderRange.addEventListener('input', linkCharacters)
 numberBoxNumber.addEventListener('input', linkCharacters)
@@ -23,6 +27,18 @@ button.addEventListener('submit', e => {
   const numbers = numbersElement.checked
   const password = generatePassword(characterSlider, uppercase, lowercase, symbols, numbers)
 })
+
+function generatePassword(characterSlider, uppercase, lowercase, symbols, numbers) {
+  
+}
+
+function arrayLoop(low, high) {
+  const array = []
+  for (let i = low; i <= high; i++;) {
+    array.push(i)
+  }
+  return array
+}
 
 function linkCharacters(e) {
   const value = e.target.value
