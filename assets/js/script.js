@@ -3,10 +3,10 @@ const characterSliderRange = document.getElementById('characterSliderRange')
 const numberBoxNumber = document.getElementById('numberBoxNumber')
 
 // all my check boxes and linking them
-const uppercaseElement = document.getElementById('uppercase')
-const lowercaseElement = document.getElementById('lowercase')
-const symbolsElement = document.getElementById('symbols')
-const numbersElement = document.getElementById('numbers')
+const uppercaseElement = document.getElementById('uppercaseVal')
+const lowercaseElement = document.getElementById('lowercaseVal')
+const symbolsElement = document.getElementById('symbolsVal')
+const numbersElement = document.getElementById('numbersVal')
 
 // linking my button so when i click it my function runs
 const button = document.getElementById('generate')
@@ -17,8 +17,8 @@ const passwordShow = document.getElementById('passwordShow')
 // creating arrays for the special characters so i dont have to manually type each code i can justr convert the code number to character 
 const UPPERCASE_CHAR = arrayFromLowToHigh(65, 90)
 const LOWERCASE_CHAR = arrayFromLowToHigh(97, 122)
-const NUMBERS_CHAR = arrayFromLowToHigh(33, 46)
-const SYMBOLS_CHAR = arrayFromLowToHigh(48, 57).concat(
+const NUMBERS_CHAR = arrayFromLowToHigh(48, 57)
+const SYMBOLS_CHAR = arrayFromLowToHigh(33, 47).concat(
   arrayFromLowToHigh(58, 64)
 ).concat(
   arrayFromLowToHigh(91, 96)
@@ -34,22 +34,22 @@ numberBoxNumber.addEventListener('input', linkCharacters)
 button.addEventListener('click', e => {
   e.preventDefault()
   const characterNumber = numberBoxNumber.value
-  const uppercase = uppercaseElement.checked
-  const lowercase = lowercaseElement.checked
-  const symbols = symbolsElement.checked
-  const numbers = numbersElement.checked
-  const password = generatePassword(characterNumber, uppercase, lowercase, symbols, numbers)
+  const uppercaseVal = uppercaseElement.checked
+  const lowercaseVal = lowercaseElement.checked
+  const symbolsVal = symbolsElement.checked
+  const numbersVal = numbersElement.checked
+  const password = generatePassword(characterNumber, uppercaseVal, lowercaseVal, symbolsVal, numbersVal)
   passwordShow.innerText = password
   console.log(password)
 })
 
 // my function to generate the password which includes all my different variables 
-function generatePassword(characterNumber, lowercase, symbols, numbers, uppercase) {
-  let charPass = ''
-  if (lowercase) charPass = charPass.concat(LOWERCASE_CHAR)
-  if (uppercase) charPass = charPass.concat(UPPERCASE_CHAR)
-  if (symbols) charPass = charPass.concat(SYMBOLS_CHAR)
-  if (numbers) charPass = charPass.concat(NUMBERS_CHAR)
+function generatePassword(characterNumber, lowercaseVal, symbolsVal, numbersVal, uppercaseVal) {
+  let charPass = "Please Choose at least one value"
+  if (lowercaseVal) charPass = charPass.concat(LOWERCASE_CHAR)
+  if (uppercaseVal) charPass = charPass.concat(UPPERCASE_CHAR)
+  if (symbolsVal) charPass = charPass.concat(SYMBOLS_CHAR)
+  if (numbersVal) charPass = charPass.concat(NUMBERS_CHAR)
 
 
   const passwordCharacters = []
