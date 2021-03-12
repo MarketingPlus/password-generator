@@ -8,6 +8,7 @@ const lowercaseElement = document.getElementById('lowercaseVal')
 const symbolsElement = document.getElementById('symbolsVal')
 const numbersElement = document.getElementById('numbersVal')
 
+const clipboard = document.getElementsByClassName('clipboard')
 
 // linking my button so when i click it my function runs
 const button = document.getElementById('generate')
@@ -18,13 +19,13 @@ const passwordShow = document.getElementById('passwordShow')
 // creating arrays for the special characters so i dont have to manually type each code i can justr convert the code number to character
 const UPPERCASE_CHAR = arrayFromLowToHigh(65, 90)
 const LOWERCASE_CHAR = arrayFromLowToHigh(97, 122)
-const NUMBERS_CHAR = arrayFromLowToHigh(48, 57)
-const SYMBOLS_CHAR = arrayFromLowToHigh(33, 47).concat(
-  arrayFromLowToHigh(58, 64)
+const NUMBERS_CHAR = arrayFromLowToHigh(48, 56)
+const SYMBOLS_CHAR = arrayFromLowToHigh(33, 46).concat(
+  arrayFromLowToHigh(58, 63)
 ).concat(
-  arrayFromLowToHigh(91, 96)
+  arrayFromLowToHigh(91, 95)
 ).concat(
-  arrayFromLowToHigh(123, 126)
+  arrayFromLowToHigh(123, 125)
 )
 
 // linking my slider and number so they both have the same value
@@ -51,7 +52,7 @@ function generatePassword(characterNumber, uppercaseVal, lowercaseVal, symbolsVa
 
   const valCount = lowercaseVal + uppercaseVal + numbersVal + symbolsVal;
 
-  let charPass = [''];
+  let charPass = [];
   if (uppercaseVal) charPass = charPass.concat(UPPERCASE_CHAR)
   if (lowercaseVal) charPass = charPass.concat(LOWERCASE_CHAR)
   if (symbolsVal) charPass = charPass.concat(SYMBOLS_CHAR)
@@ -85,8 +86,5 @@ function linkCharacters(e) {
   numberBoxNumber.value = value
 }
 
-function arrayNoValue() {
-
-}
 
 // var generateBtn = document.querySelector("#generate");function writePassword() {var password = generatePassword();var passwordText = document.querySelector("#password");passwordText.value = password;}generateBtn.addEventListener("click", writePassword);
