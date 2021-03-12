@@ -16,7 +16,6 @@ const button = document.getElementById('generate')
 const passwordShow = document.getElementById('passwordShow')
 
 // creating arrays for the special characters so i dont have to manually type each code i can justr convert the code number to character
-const NO_VALUE_CHECKED = "No Value Checked"
 const UPPERCASE_CHAR = arrayFromLowToHigh(65, 90)
 const LOWERCASE_CHAR = arrayFromLowToHigh(97, 122)
 const NUMBERS_CHAR = arrayFromLowToHigh(48, 57)
@@ -52,7 +51,7 @@ function generatePassword(characterNumber, uppercaseVal, lowercaseVal, symbolsVa
 
   const valCount = lowercaseVal + uppercaseVal + numbersVal + symbolsVal;
 
-  let charPass = '';
+  let charPass = [''];
   if (uppercaseVal) charPass = charPass.concat(UPPERCASE_CHAR)
   if (lowercaseVal) charPass = charPass.concat(LOWERCASE_CHAR)
   if (symbolsVal) charPass = charPass.concat(SYMBOLS_CHAR)
