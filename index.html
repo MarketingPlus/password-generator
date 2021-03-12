@@ -8,6 +8,8 @@
     <title>Password Generator</title>
     <!-- LINK TO STYLESHEET -->
     <link rel="stylesheet" href="assets/css/style.css"/>
+    <!-- ICONS I USED FOR MY WEBSITE -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 
   </head>
 
@@ -28,7 +30,10 @@
             </div>
 
             <div class="grid__item2">
-              <textarea readonly class="clipboard" id="passwordShow" aria-label="Generated Password">Your Secure Password</textarea> 
+              <div class="password__container">
+                <textarea readonly class="clipboard" id="passwordShow" aria-label="Generated Password">Your Secure Password</textarea> 
+                <i class='bx bx-clipboard bx-lg'></i>
+              </div>
             </div>
 
             <div class="grid__item3">

@@ -8,6 +8,7 @@ const lowercaseElement = document.getElementById('lowercaseVal')
 const symbolsElement = document.getElementById('symbolsVal')
 const numbersElement = document.getElementById('numbersVal')
 
+// linking my textarea so i can create a copy to clipboard function
 const clipboard = document.getElementsByClassName('clipboard')
 
 // linking my button so when i click it my function runs
@@ -85,6 +86,3 @@ function linkCharacters(e) {
   characterSliderRange.value = value
   numberBoxNumber.value = value
 }
-
-
-// var generateBtn = document.querySelector("#generate");function writePassword() {var password = generatePassword();var passwordText = document.querySelector("#password");passwordText.value = password;}generateBtn.addEventListener("click", writePassword);
