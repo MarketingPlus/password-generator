@@ -10,10 +10,10 @@ const numbersElement = document.getElementById('numbers')
 
 const button = document.getElementById('generate')
 
-const uppercaseCharCode = arrayLoop(65, 90)
-const lowercaseCharCode = arrayLoop(97, 122)
-const symbolsCharCode = arrayLoop(33, 46)
-const uppercaseCharCode = arrayLoop(48, 57).concat(arratLoop(58, 64)
+const UPPERCASE_CHAR = arrayLoop(65, 90)
+const LOWERCASE_CHAR = arrayLoop(97, 122)
+const SYMBOL_CHAR = arrayLoop(33, 46)
+const NUMBER_CHAR = arrayLoop(48, 57).concat(arrayLoop(58, 64)
 ).concat(arrayLoop(91, 96)
 ).concat(arrayLoop(123, 126)
 )
@@ -21,7 +21,7 @@ const uppercaseCharCode = arrayLoop(48, 57).concat(arratLoop(58, 64)
 characterSliderRange.addEventListener('input', linkCharacters)
 numberBoxNumber.addEventListener('input', linkCharacters)
 
-button.addEventListener('submit', e => {
+button.addEventListener('click', e => {
   e.preventDefault()
   const characterSlider = numberBoxNumber.value
   const uppercase = uppercaseElement.checked
@@ -32,12 +32,12 @@ button.addEventListener('submit', e => {
 })
 
 function generatePassword(characterSlider, uppercase, lowercase, symbols, numbers) {
-  
+  console.log(LOWERCASE_CHAR)
 }
 
 function arrayLoop(low, high) {
   const array = []
-  for (let i = low; i <= high; i++;) {
+  for (let i = low; i <= high; i++) {
     array.push(i)
   }
   return array
