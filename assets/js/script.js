@@ -11,6 +11,9 @@ const numbersElement = document.getElementById('numbers')
 // linking my button so when i click it my function runs
 const button = document.getElementById('generate')
 
+// getting the input area and linking it to js
+const passwordShow = document.getElementById('password')
+
 // creating arrays for the special characters so i dont have to manually type each code i can justr convert the code number to character 
 const UPPERCASE_CHAR = arrayLoop(65, 90)
 const LOWERCASE_CHAR = arrayLoop(97, 122)
@@ -33,12 +36,28 @@ button.addEventListener('click', e => {
   const symbols = symbolsElement.checked
   const numbers = numbersElement.checked
   const password = generatePassword(characterSlider, uppercase, lowercase, symbols, numbers)
+  textarea
 })
 
 
 // my function to generate the password which includes all my different variables 
 function generatePassword(characterSlider, uppercase, lowercase, symbols, numbers) {
-  console.log(LOWERCASE_CHAR)
+  let charPass = UPPERCASE_CHAR 
+  if (lowercase) charPass = charPass.concat
+  (LOWERCASE_CHAR)
+  if (symbols) charPass = charPass.concat
+  (SYMBOL_CHAR)
+  if (numbers) charPass = charPass.concat
+  (NUMBER_CHAR)
+
+
+  const passwordChar = []
+  for(let i = 0; 0 < characterSlider, i++;) {
+    const characterCode = charPass[Math.floor(Math.random() * characterSlider)]
+    passwordChar.push(String.fromCharCode(characterCode))
+  }
+
+  return passwordChar.join('')
 }
 
 // my array loop which counts from low number to high number (from a range) to gather the expected values for each character code set
