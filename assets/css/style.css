@@ -85,7 +85,7 @@ header h2 {
 
 p {
   color: white;
-  text-shadow: 0px 0px 5px rgba(0,0,0, 0.5);
+  text-shadow: 0px 0px 10px rgba(0,0,0, 0.5);
 }
 
 /* =============== PASSWORD TEXTAREA =================== */
@@ -100,8 +100,9 @@ textarea {
   width: 80%;
   color: white;
   padding: 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.5);
   box-shadow: 20px 20px 50px rgba(0,0,0, 0.5);
+  resize: none;
 }
 
 textarea[placeholder] {
@@ -109,13 +110,21 @@ textarea[placeholder] {
   margin: auto;
   align-content: center;
   color: white;
+  font-family: "Cormorant Unicase", serif;
+  font-size: 1.5rem;
 }
+
+
 /* =============== INPUT GRID =================== */
 
 .grid__item3 {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+
+/* =============== CHECKBOX STYLING =================== */
+
+
 
 /* =============== NUMBER OF CHARACTERS =================== */
 
@@ -210,6 +219,7 @@ button {
   box-shadow: 20px 20px 50px rgba(0,0,0, 0.5);
   font-family: "Cormorant Unicase", serif;
   transition: 0.3s ease-in-out;
+  width: 100%;
 }
 
 button:hover {
