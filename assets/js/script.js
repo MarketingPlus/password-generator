@@ -43,20 +43,24 @@ button.addEventListener('click', e => {
   const password = generatePassword(characterNumber, uppercaseVal, lowercaseVal, symbolsVal, numbersVal)
   passwordShow.innerText = password
   console.log(password)
-})
+});
+
 
 // my function to generate the password which includes all my different variables 
-function generatePassword(characterNumber, lowercaseVal, symbolsVal, numbersVal, uppercaseVal) {
-  let generatePassword = '';
+function generatePassword(characterNumber, uppercaseVal, lowercaseVal, symbolsVal, numbersVal) {
+  let password = '';
 
-  const valCount = 
+  const valCount = lowercaseVal + uppercaseVal + numbersVal + symbolsVal;
 
+  let charPass = '';
   if (uppercaseVal) charPass = charPass.concat(UPPERCASE_CHAR)
   if (lowercaseVal) charPass = charPass.concat(LOWERCASE_CHAR)
   if (symbolsVal) charPass = charPass.concat(SYMBOLS_CHAR)
   if (numbersVal) charPass = charPass.concat(NUMBERS_CHAR)
 
-  if 
+  if(valCount === 0) {
+    return 'Please select atlease one option 👻';
+  }
   
   const passwordCharacters = []
   for (let i = 0; i < characterNumber; i++) {
