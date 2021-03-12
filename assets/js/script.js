@@ -15,8 +15,38 @@ const button = document.getElementById('generate')
 // getting the input area and linking it to js
 const passwordShow = document.getElementById('passwordShow')
 
+// allows users to copy the password to clipboard 
+const clipboard = document.getElementById('passwordShow')
+
+
+const randomVal = {
+  lower: randomLower,
+  upper: randomUpper,
+  number: randomNumber,
+  symbol: randomSymbol
+}
+
+clipboard.addEventListener('click', () => {
+  const textarea = document.getElementsByClassName('clipboard');
+  const password = passwordShow.innerText;
+
+  if(!password) {return; }
+
+  textarea.value = password;
+	document.body.appendChild(textarea);
+	textarea.select();
+	document.execCommand('copy');
+	textarea.remove();
+	alert('Password copied to clipboard');
+}
+
+
+
+
+
+
+
 // creating arrays for the special characters so i dont have to manually type each code i can justr convert the code number to character
-const NO_VALUE_CHECKED = "No Value Checked"
 const UPPERCASE_CHAR = arrayFromLowToHigh(65, 90);
 const LOWERCASE_CHAR = arrayFromLowToHigh(97, 122);
 const SYMBOLS_CHAR = arrayFromLowToHigh(33, 47).concat(
@@ -28,41 +58,6 @@ const SYMBOLS_CHAR = arrayFromLowToHigh(33, 47).concat(
 )
 const NUMBERS_CHAR = arrayFromLowToHigh(48, 57)
 
-// linking my slider and number so they both have the same value
-characterSliderRange.addEventListener('input', linkCharacters)
-numberBoxNumber.addEventListener('input', linkCharacters)
-
-// checking for the users input values for the password length and a boolean if checkboxes have been checked
-button.addEventListener('click', e => {
-  e.preventDefault()
-  const characterNumber = numberBoxNumber.value
-  const uppercaseVal = uppercaseElement.checked
-  const lowercaseVal = lowercaseElement.checked
-  const symbolsVal = symbolsElement.checked
-  const numbersVal = numbersElement.checked
-  const password = generatePassword(characterNumber, uppercaseVal, lowercaseVal, symbolsVal, numbersVal)
-  passwordShow.innerText = password
-  console.log(password)
-})
-
-// my function to generate the password which includes all my different variables 
-function generatePassword(characterNumber, lowercaseVal, symbolsVal, numbersVal, uppercaseVal, noValueChecked) {
-  let charPass = LOWERCASE_CHAR
-  if (uppercaseVal) charPass = charPass.concat(UPPERCASE_CHAR)
-  if (lowercaseVal) charPass = charPass.concat(LOWERCASE_CHAR)
-  if (symbolsVal) charPass = charPass.concat(SYMBOLS_CHAR)
-  if (numbersVal) charPass = charPass.concat(NUMBERS_CHAR)
-
-  const passwordCharacters = []
-  for (let i = 0; i < characterNumber; i++) {
-    const characterCode = charPass[Math.floor(Math.random() * charPass.length)]
-    passwordCharacters.push(String.fromCharCode(characterCode))
-  }
-  return passwordCharacters.join('')
-
-  if 
-}
-
 // my array loop which counts from low number to high number (from a range) to gather the expected values for each character code set
 function arrayFromLowToHigh(low, high) {
   const array = []
@@ -72,15 +67,14 @@ function arrayFromLowToHigh(low, high) {
   return array
 }
 
+// linking my slider and number so they both have the same value
+characterSliderRange.addEventListener('input', linkCharacters)
+numberBoxNumber.addEventListener('input', linkCharacters)
+
 // My function to link both the slider and number box together ensuring they both have the same values
 function linkCharacters(e) {
   const value = e.target.value
   characterSliderRange.value = value
   numberBoxNumber.value = value
 }
-
-function arrayNoValue() {
-
-}
-
 // var generateBtn = document.querySelector("#generate");function writePassword() {var password = generatePassword();var passwordText = document.querySelector("#password");passwordText.value = password;}generateBtn.addEventListener("click", writePassword);
