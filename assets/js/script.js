@@ -1,7 +1,19 @@
-// Assignment Code
+const characterSliderRange = document.getElementById('characterSliderRange')
+const numberBoxNumber = document.getElementById('numberBoxNumber')
+
+characterSliderRange.addEventListener('input', linkCharacters)
+numberBoxNumber.addEventListener('input', linkCharacters)
+
+function linkCharacters(e) {
+  const value = e.target.value
+  characterSliderRange.value = value
+  numberBoxNumber.value = value
+}
+
+
 var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
+
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -10,5 +22,5 @@ function writePassword() {
 
 }
 
-// Add event listener to generate button
+
 generateBtn.addEventListener("click", writePassword);
