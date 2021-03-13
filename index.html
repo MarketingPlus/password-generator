@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <!-- TAB TITLE -->
-    <title>Password Generator</title>
+    <title>Password Generator | Benjamin Wilson</title>
     <!-- LINK TO STYLESHEET -->
     <link rel="stylesheet" href="assets/css/style.css"/>
     <!-- ICONS I USED FOR MY WEBSITE -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-
+    <!-- FAVICON LINK -->
+    <link rel="shortcut icon" href="assets/images/fav.png" type="image/x-icon">
   </head>
 
 
@@ -19,7 +20,7 @@
   <div class="background">
     <!-- CONTAINER -->
       <div class="container">
-        <div class="card">
+        <div class="card" id="card">
           <div class="card__container">
 
             <div class="grid__item1">
@@ -93,5 +94,16 @@
   </div>
     <!-- SCRIPTS -->
     <script src="assets/js/script.js" defer></script>
+
+
+    <!-- DRAG AND DROP JQUERY -->
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script>
+            $( function() {
+            $( "#card" ).draggable();
+            } );
+        </script>
   </body>
 </html>
