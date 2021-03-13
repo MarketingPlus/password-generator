@@ -8,25 +8,34 @@ const lowercaseElement = document.getElementById('lowercaseVal')
 const symbolsElement = document.getElementById('symbolsVal')
 const numbersElement = document.getElementById('numbersVal')
 
-// linking my textarea so i can create a copy to clipboard function
-const clipboard = document.getElementsByClassName('clipboard')
-
 // linking my button so when i click it my function runs
 const button = document.getElementById('generate')
 
 // getting the input area and linking it to js
 const passwordShow = document.getElementById('passwordShow')
 
+// linking clipboard button to js 
+const clipboard = document.getElementById('clipboard')
+
+// copy to clipboard function
+clipboard.addEventListener('click', e => {
+  const textOutput = document.getElementById('passwordShow')
+
+  textOutput.select();
+  document.execCommand('copy');
+  window.alert("You have successfully copied your UNIQUE password to your clipboard 📋")
+})
+
 // creating arrays for the special characters so i dont have to manually type each code i can justr convert the code number to character
 const UPPERCASE_CHAR = arrayFromLowToHigh(65, 90)
 const LOWERCASE_CHAR = arrayFromLowToHigh(97, 122)
-const NUMBERS_CHAR = arrayFromLowToHigh(48, 56)
-const SYMBOLS_CHAR = arrayFromLowToHigh(33, 46).concat(
-  arrayFromLowToHigh(58, 63)
+const NUMBERS_CHAR = arrayFromLowToHigh(48, 57)
+const SYMBOLS_CHAR = arrayFromLowToHigh(33, 47).concat(
+  arrayFromLowToHigh(58, 64)
 ).concat(
-  arrayFromLowToHigh(91, 95)
+  arrayFromLowToHigh(91, 96)
 ).concat(
-  arrayFromLowToHigh(123, 125)
+  arrayFromLowToHigh(123, 126)
 )
 
 // linking my slider and number so they both have the same value
