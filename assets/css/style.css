@@ -1,20 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@300;500&display=swap");
 
 :root {
-  /* ================ DEFAULT COLOURS ==================== */
-  --main-color: 
-  --first-color: 
-  --second-color: 
-  --third-color: 
-  --forth-color: 
-  --p-colour: 
+  /* ================ DEFAULT PROPERTIES ==================== */
+  --shadow--properties: 0px 0px 5px rgba(0,0,0, 0.5);
+  --blue-color: rgb(0, 132, 255);
+  --white-color: #fff;
+  --black-color: #000;
+  --blue-hover: rgb(115, 180, 241);
+  --box-shadow: 20px 20px 50px rgba(0,0,0, 0.5);
+  --border-properties: 1px solid rgba(255, 255, 255, 0.5);
 
-  /* =============== DEFAULT FONT SIZE =================== */
-  --one-font: 1.5rem;
-  --two-font: 1rem;
-  --three-font: 0.75rem;
-  --four-font: 0.5rem;
-  --five-font: 0.3rem;
+  /* =============== DEFAULT SIZE =================== */
+  --one-size: 1.5rem;
+  --two-size: 1rem;
+  --three-size: 0.75rem;
+  --four-size: 0.5rem;
+  --five-size: 0.3rem;
 }
 
 /* =============== UNIVERSAL STYLING =================== */
@@ -49,8 +50,8 @@ html {
 h1,
 h2 {
   margin: 0;
-  color: white;
-  text-shadow: 0px 0px 5px rgba(0,0,0, 0.5);
+  color: var(--white-color);
+  text-shadow: var(--shadow--properties);
 }
 
 h1 {
@@ -86,10 +87,10 @@ h1 {
 .card {
   width: 40%;
   height: 70%;
-  border-radius: 1rem;
-  box-shadow: 20px 20px 50px rgba(0,0,0, 0.7);
+  border-radius: var(--two-size);
+  box-shadow: var(--box-shadow);
   background: rgba(110, 110, 110, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: var(--border-properties);
 }
 
 .card__container {
@@ -103,8 +104,8 @@ header h2 {
 }
 
 p {
-  color: white;
-  text-shadow: 0px 0px 10px rgba(0,0,0, 0.5);
+  color: var(--white-color);
+  text-shadow: var(--shadow--properties);
 }
 
 /* =============== PASSWORD TEXTAREA =================== */
@@ -122,20 +123,20 @@ p {
 }
 
 textarea {
-  border-radius: 1rem;
+  border-radius: var(--two-size);
   width: 80%;
-  color: black;
-  padding: 1rem;
-  border: 1px solid rgba(0, 0, 0, 0.5);
-  box-shadow: 20px 20px 50px rgba(0,0,0, 0.5);
+  color: var(--black-color);
+  padding: var(--two-size);
+  border: var(--border-properties);
+  box-shadow: var(--shadow--properties);
   resize: none;
   text-align: center;
   justify-content: center;
   margin: auto;
   align-content: center;
-  color: black;
+  color: var(--black-color);
   font-family: "Cormorant Unicase", serif;
-  font-size: 1.5rem;
+  font-size: var(--one-size);
   height: 100%;
   overflow-y: hidden;
   position: relative;
@@ -143,19 +144,19 @@ textarea {
 
 i {
   border-radius: 15px;
-  color: white;
-  background-color: rgb(0, 132, 255);
-  padding: 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  box-shadow: 20px 20px 50px rgba(0,0,0, 0.5);
+  color: var(--white-color);
+  background-color: var(--blue-color);
+  padding: var(--two-size);
+  border: var(--border-properties);
+  box-shadow: var(--shadow--properties);
   font-family: "Cormorant Unicase", serif;
   transition: 0.3s ease-in-out;
-  font-size: 1.5rem;
+  font-size: var(--one-size);
   display: flex;
 }
 
 i:hover {
-  background-color: rgb(115, 180, 241);
+  background-color: var(--blue-hover);
   cursor: pointer;
 }
 
@@ -177,9 +178,9 @@ i:hover {
 .slider {
   width: 50%;
   opacity: 1;
-  background-color: rgb(0, 132, 255);
+  background-color: var(--blue-color);
   cursor: pointer;
-  margin-right: 1rem;
+  margin-right: var(--one-size);
 }
 
 .slider:hover {
@@ -189,21 +190,21 @@ i:hover {
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  background-color: rgb(0, 132, 255);
+  background-color: var(--blue-color);
 }
 
 .slider::-moz-range-thumb {
-  background-color:rgb(0, 132, 255);
+  background-color:var(--blue-color);
 }
 
 .number__box {
   text-align: center;
   border-radius: 15px;
   color: white;
-  background-color: rgb(0, 132, 255);
-  padding: 0.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  box-shadow: 20px 20px 50px rgba(0,0,0, 0.5);
+  background-color: var(--blue-color);
+  padding: var(--four-size);
+  border: var(--border-properties);
+  box-shadow: var(--box-shadow);
   font-family: "Cormorant Unicase", serif;
 }
 
@@ -261,17 +262,17 @@ i:hover {
 button { 
   border-radius: 15px;
   color: white;
-  background-color: rgb(0, 132, 255);
-  padding: 1.5rem 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  box-shadow: 20px 20px 50px rgba(0,0,0, 0.5);
+  background-color: var(--blue-color);
+  padding: var(--one-size) var(--two-size);
+  border: var(--border-properties);
+  box-shadow: var(--box-shadow);
   font-family: "Cormorant Unicase", serif;
   transition: 0.3s ease-in-out;
   width: 60%;
-  font-size: 1rem;
+  font-size: var(--two-size);
 }
 
 button:hover {
-  background-color: rgb(115, 180, 241);
+  background-color: var(--blue-hover);
   cursor: pointer;
 }
