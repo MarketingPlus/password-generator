@@ -20,77 +20,85 @@
   <div class="background">
     <!-- CONTAINER -->
       <div class="container">
-        <div class="card" id="card">
+        <section class="card" id="card">
           <div class="card__container">
 
-            <div class="grid__item1">
+            <!-- SECTION ONE IN THE GRID -->
+
+            <section class="grid__item1">
               <header>
                 <h1>Password Generator</h1>
                 <h2>By Benjamin Wilson</h2>
               </header>
-            </div>
+            </section>
 
-            <div class="grid__item2">
+            <!-- SECTION TWO IN THE GRID -->
+
+            <section class="grid__item2">
               <div class="password__container">
+                <!-- PASSWORD GENERATOR TEXTAREA -->
                 <textarea readonly id="passwordShow" aria-label="Generated Password">Your Secure Password</textarea> 
                 <i class='bx bx-clipboard bx-lg' id="clipboard"></i>
               </div>
-            </div>
+            </section>
 
-            <div class="grid__item3">
+            <!-- SECTION THREE IN THE GRID -->
 
+            <section class="grid__item3">
+
+              <!-- subgrid item one that includes the title of what the input indicates -->
                 <div class="grid__sub1">
                   <p>Number of Characters</p>
                 </div>
-
+              <!-- subgrid item two that includes the input type including a slider and numberbox-->
                 <div class="grid__sub2">
                   <input class="slider" type="range" name="slider" id="characterSliderRange" min="8" max="128" value="8">
                   <input class="number__box" type="number" name="numberbox" id="numberBoxNumber" min="8" max="128" value="8"> 
                 </div>
-
+              <!-- subgrid item three that includes the title of what the input indicates -->
                 <div class="grid__sub3">
                   <p>Include Uppercase</p>
                 </div>
-
+              <!-- subgrid item four that includes the input type which is a checkbox -->
                 <div class="grid__sub4">
                   <input type="checkbox" name="uppercase" id="uppercaseVal">
                 </div>
-
+              <!-- subgrid item five that includes the title of what the input indicates -->
                 <div class="grid__sub5">
                   <p>Include Lowercase</p>
                 </div>
-
+              <!-- subgrid item six that includes the input type which is a checkbox -->
                 <div class="grid__sub6">
                   <input type="checkbox" name="lowercase" id="lowercaseVal">
                 </div>
-
+              <!-- subgrid item seven that includes the title of what the input indicates -->
                 <div class="grid__sub7">
                   <p>Include Symbols</p>
                 </div>
-                
+              <!-- subgrid item eight that includes the input type which is a checkbox -->
                 <div class="grid__sub8">
                   <input type="checkbox" name="symbols" id="symbolsVal">
                 </div>
-          
+              <!-- subgrid item nine that includes the title of what the input indicates -->
                 <div class="grid__sub9">
                   <p>Include Numbers</p>
                 </div>  
-
+              <!-- subgrid item ten that includes the input type which is a checkbox -->
                 <div class="grid__sub10">
                   <input type="checkbox" name="numbers" id="numbersVal"> 
                 </div>
-            </div>
+            </section>
 
-            <div class="grid__item4">
+
+            <!-- SECTION FOUR IN THE GRID -->
+            <section class="grid__item4">
               <div class="grid__container8">
                 <button type="submit" id="generate">Generate Password</button>
               </div>
+          </section>
 
-
-            
-          </div>
         </div>
-      </div>
+      </section>
   </div>
     <!-- SCRIPTS -->
     <script src="assets/js/script.js" defer></script>
