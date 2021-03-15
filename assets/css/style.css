@@ -20,15 +20,21 @@
 
 /* =============== UNIVERSAL STYLING =================== */
 
+/* creates a box-sizing of border box*/
 *,
 ::after,
 ::before {
   box-sizing: border-box;
 }
 
+/* makes it so users cant scroll */
+
 html {
   overflow: hidden;
 }
+
+/* makes sure there is no padding or margin on the body or html elements and gives it
+a font family */
 
 body,
 html {
@@ -40,12 +46,16 @@ html {
   overflow: hidden;
 }
 
+/* sets the background to an image covering the whole screen */
+
 .background {
   background-image: url("../images/background.png");
   height: 100vh;
   background-position: center;
   background-size: cover;
 }
+
+/* styling heading elements */
 
 h1,
 h2 {
@@ -54,9 +64,13 @@ h2 {
   text-shadow: var(--shadow--properties);
 }
 
+/* applying a margin to the h1 elements  */
+
 h1 {
   margin-top: 5%;
 }
+
+/* applying a pop up animation to the card on page load*/
 
 @keyframes slideInFromLeft {
   0% {
@@ -75,6 +89,7 @@ h1 {
 
 /* =============== CONTAINER =================== */
 
+/* container for the whole page */
 .container {
   display: flex;
   justify-content: center;
@@ -84,8 +99,10 @@ h1 {
 }
 
 /* =============== CARD =================== */
+
+/* card styling and positioning */
 .card {
-  width: 40%;
+  width: 60%;
   height: 70%;
   border-radius: var(--two-size);
   box-shadow: var(--box-shadow);
@@ -93,16 +110,19 @@ h1 {
   border: var(--border-properties);
 }
 
+/* container inside the card for the items and making it a grid*/
 .card__container {
   display: grid;
   height: 100%;
 }
 
+/* making sure the text is aligned in the center */
 header h1,
 header h2 {
   text-align: center;
 }
 
+/* styling the paragraph element */
 p {
   color: var(--white-color);
   text-shadow: var(--shadow--properties);
@@ -110,10 +130,13 @@ p {
 
 /* =============== PASSWORD TEXTAREA =================== */
 
+/* giving the width of the grid item 2 */
 .grid__item2 {
   width: 100%;
 }
 
+/* the element password container needs to display the password textarea
+and the copy to clipboard button side by side */
 .password__container {
   display: flex;
   justify-content: space-evenly;
@@ -122,6 +145,8 @@ p {
   margin: auto;
 }
 
+/* positioning, styling, fontfamily and innerproperities of the textarea
+have all been set here */
 textarea {
   border-radius: var(--two-size);
   width: 80%;
@@ -142,6 +167,7 @@ textarea {
   position: relative;
 }
 
+/* styling positioning of the copy to clipboard button */
 i {
   border-radius: 15px;
   color: var(--white-color);
@@ -155,6 +181,7 @@ i {
   display: flex;
 }
 
+/* hover effect for the copy to clipboard button */
 i:hover {
   background-color: var(--blue-hover);
   cursor: pointer;
@@ -163,6 +190,7 @@ i:hover {
 
 /* =============== INPUT GRID =================== */
 
+/* creating a grid for all the input types and titles */
 .grid__item3 {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -170,23 +198,27 @@ i:hover {
 
 /* =============== NUMBER OF CHARACTERS =================== */
 
+/* making sure the grid sub items are centered */
 .grid__sub1, .grid__sub2 {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+/* making the slider have the correct width and color */
 .slider {
   width: 50%;
   opacity: 1;
   background-color: var(--blue-color);
-  cursor: pointer;
   margin-right: var(--one-size);
 }
 
+/* giving a grab cursor effect when you mouse over the slider */
 .slider:hover {
   cursor: grab;
 }
 
+/* styling the slider */
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
@@ -197,6 +229,7 @@ i:hover {
   background-color:var(--blue-color);
 }
 
+/* giving the numberbox styling and positioning*/
 .number__box {
   text-align: center;
   border-radius: 15px;
@@ -210,6 +243,7 @@ i:hover {
 
 /* =============== INCLUDE UPPERCASE =================== */
 
+/* making sure the grid sub items are centered */
 .grid__sub3, .grid__sub4 {
   display: flex;
   justify-content: center;
@@ -219,6 +253,7 @@ i:hover {
 
 /* =============== INCLUDE LOWERCASE =================== */
 
+/* making sure the grid sub items are centered */
 .grid__sub5, .grid__sub6 {
   display: flex;
   justify-content: center;
@@ -228,6 +263,7 @@ i:hover {
 
 /* =============== INCLUDE SYMBOLS =================== */
 
+/* making sure the grid sub items are centered */
 .grid__sub7, .grid__sub8 {
   display: flex;
   justify-content: center;
@@ -237,6 +273,7 @@ i:hover {
 
 /* =============== INCLUDE NUMBERS =================== */
 
+/* making sure the grid sub items are centered */
 .grid__sub9, .grid__sub10 {
   display: flex;
   justify-content: center;
@@ -246,12 +283,14 @@ i:hover {
 
 /* =============== GENERATE BUTTON =================== */
 
+/* making sure the grid items are centered */
 .grid__item4 {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+/* making sure the button is wrapped in a container */
 .grid__container8 {
   width: 100%;
   display: flex;
@@ -259,9 +298,10 @@ i:hover {
   margin-bottom: 2rem;
 }
 
+/* styling the generate pasword button */
 button { 
   border-radius: 15px;
-  color: white;
+  color: var(--white-color);
   background-color: var(--blue-color);
   padding: var(--one-size) var(--two-size);
   border: var(--border-properties);
@@ -272,7 +312,55 @@ button {
   font-size: var(--two-size);
 }
 
+/* giving the button a hover effect */
 button:hover {
   background-color: var(--blue-hover);
   cursor: pointer;
+}
+
+/* =============== MEDIA QUERIES =================== */
+
+@media screen and (max-width: 768px) {
+ .password__container {
+   flex-direction: column;
+ }
+
+ i {
+   margin-top: var(--three-size);
+ }
+
+ p {
+   flex-wrap: wrap;
+ }
+}
+
+@media screen and (max-width: 600px) {
+  .grid__item3 {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    height: 80%;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  button {
+    padding: var(--two-size) var(--two-size);
+  }
+}
+
+@media screen and (max-height: 700px) {
+  h1 {
+    font-size: var(--one-size);
+  }
+
+  h2 {
+    font-size: var(--two-size);
+  }
+
+  p {
+    font-size: var(--three-size);
+  }
 }
