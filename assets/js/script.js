@@ -44,7 +44,6 @@ numberBoxNumber.addEventListener('input', linkCharacters)
 
 // checking for the users input values for the password length and a boolean if checkboxes have been checked
 button.addEventListener('click', e => {
-  e.preventDefault()
   const characterNumber = numberBoxNumber.value
   const uppercaseVal = uppercaseElement.checked
   const lowercaseVal = lowercaseElement.checked
@@ -52,7 +51,6 @@ button.addEventListener('click', e => {
   const numbersVal = numbersElement.checked
   const password = generatePassword(characterNumber, uppercaseVal, lowercaseVal, symbolsVal, numbersVal)
   passwordShow.innerText = password
-  console.log(password)
 });
 
 
